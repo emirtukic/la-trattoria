@@ -73,7 +73,7 @@ export default function GalleryLightbox({ photos }: { photos: string[] }) {
                 <button
                   aria-label="Zatvori"
                   onClick={close}
-                  className="absolute right-4 top-4 text-3xl text-background"
+                  className="absolute right-4 top-4 z-20 text-3xl text-background"
                 >
                   ×
                 </button>
@@ -83,7 +83,7 @@ export default function GalleryLightbox({ photos }: { photos: string[] }) {
                     e.stopPropagation();
                     prev();
                   }}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-4xl text-background"
+                  className="absolute left-4 top-1/2 z-20 -translate-y-1/2 text-4xl text-background"
                 >
                   ‹
                 </button>
@@ -93,7 +93,7 @@ export default function GalleryLightbox({ photos }: { photos: string[] }) {
                     e.stopPropagation();
                     next();
                   }}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-4xl text-background"
+                  className="absolute right-4 top-1/2 z-20 -translate-y-1/2 text-4xl text-background"
                 >
                   ›
                 </button>
