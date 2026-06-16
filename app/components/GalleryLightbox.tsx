@@ -102,8 +102,20 @@ export default function GalleryLightbox({ photos }: { photos: string[] }) {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  className="relative h-[85vh] w-full max-w-5xl"
+                  className="relative h-[85vh] w-full max-w-5xl touch-pan-y"
                   onClick={(e) => e.stopPropagation()}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.6}
+                  onDragEnd={(_, info) => {
+                    const swipe = info.offset.x;
+                    const velocity = info.velocity.x;
+                    if (swipe < -60 || velocity < -500) {
+                      next();
+                    } else if (swipe > 60 || velocity > 500) {
+                      prev();
+                    }
+                  }}
                 >
                   <Image
                     src={photos[openIndex]}
@@ -111,6 +123,7 @@ export default function GalleryLightbox({ photos }: { photos: string[] }) {
                     fill
                     className="object-contain"
                     sizes="100vw"
+                    draggable={false}
                   />
                 </motion.div>
               </motion.div>
