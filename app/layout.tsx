@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "YCDtsAEywr9lpZ4To_kueB0KZfFciTUbBhp-u1KF3CI",
+  },
   openGraph: {
     title: "La Trattoria | Sarajevo",
     description:
