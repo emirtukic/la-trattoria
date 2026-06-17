@@ -18,6 +18,19 @@ export const metadata: Metadata = {
   title: "La Trattoria | Sarajevo",
   description:
     "La Trattoria - restoran i pizzeria u srcu Sarajeva. Svježa tjestenina, pizze i pinse pripremljene s ljubavlju.",
+  metadataBase: new URL("https://latrattoria.ba"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "La Trattoria | Sarajevo",
+    description:
+      "La Trattoria - restoran i pizzeria u srcu Sarajeva. Svježa tjestenina, pizze i pinse pripremljene s ljubavlju.",
+    url: "https://latrattoria.ba",
+    siteName: "La Trattoria",
+    locale: "bs_BA",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
