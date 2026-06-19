@@ -36,6 +36,29 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  name: "La Trattoria",
+  description:
+    "La Trattoria - restoran i pizzeria u srcu Sarajeva. Svježa tjestenina, pizze i pinse pripremljene s ljubavlju.",
+  url: "https://latrattoria.ba",
+  telephone: "+38733864470",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Radićeva 4a",
+    addressLocality: "Sarajevo",
+    addressCountry: "BA",
+  },
+  openingHours: "Mo-Su 09:00-23:30",
+  servesCuisine: ["Italian", "Pizza"],
+  sameAs: [
+    "https://www.facebook.com/people/La-Trattoria/61591024044855/",
+    "https://www.instagram.com/latrattoria.sarajevo/",
+  ],
+  image: "https://latrattoria.ba/images/restoran.jpg",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -46,6 +69,12 @@ export default function RootLayout({
       lang="bs"
       className={`${display.variable} ${sans.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
