@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
@@ -45,7 +46,8 @@ export default function Contact() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.15}>
+        <Reveal delay={0.15} className="space-y-6">
+          <ContactForm />
           <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
             <iframe
               title="Lokacija La Trattoria"
